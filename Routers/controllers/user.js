@@ -19,4 +19,15 @@ const createUser = (req, res) => {
     });
 };
 
-module.exports = { createUser };
+const getAllUsers = (req, res) =>{
+  userModel
+    .find({})
+    .then((result) => {
+      res.send(result);
+    })
+    .catch((err) => {
+      res.send(err);
+    });
+};
+
+module.exports = { createUser, getAllUsers };
