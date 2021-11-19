@@ -4,6 +4,7 @@ const dotenv = require("dotenv");
 const cors = require("cors");
 const db = require("./db/db");
 const toDoRouter = require("./Routers/routes/todo");
+const userRouter = require("./Routers/routes/users");
 
 //instantiate express
 const app = express();
@@ -11,6 +12,7 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 app.use("/todos", toDoRouter);
+app.use("/users", userRouter);
 
 //load enviroment variables
 dotenv.config();
