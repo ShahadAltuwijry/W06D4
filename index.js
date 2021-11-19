@@ -2,17 +2,19 @@
 const express = require("express");
 const dotenv = require("dotenv");
 const cors = require("cors");
+const morgan = require("morgan");
 const db = require("./db/db");
 const toDoRouter = require("./Routers/routes/todo");
-const userRouter = require("./Routers/routes/users");
+const userRouter = require("./Routers/routes/user");
 
 //instantiate express
 const app = express();
 
 app.use(express.json());
 app.use(cors());
+app.use(morgan("dev"));
 app.use("/todos", toDoRouter);
-app.use("/users", userRouter);
+app.use("/user", userRouter);
 
 //load enviroment variables
 dotenv.config();
