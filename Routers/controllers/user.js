@@ -1,10 +1,10 @@
 const userModel = require("./../../db/models/userSchema");
 
 const createUser = (req, res) => {
-  const { name, email, password } = req.body;
+  const { userName, email, password } = req.body;
 
   const newUser = new userModel({
-    name,
+    userName,
     email,
     password,
   });
