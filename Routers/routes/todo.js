@@ -3,7 +3,7 @@ const { getAllToDos, addToDo } = require("./../controllers/todo");
 
 const toDoRouter = express.Router();
 
-toDoRouter.get("/todos", getAllToDos);
-toDoRouter.post("/todos", addToDo);
+toDoRouter.get("/", getAllToDos);
+toDoRouter.post("/", addToDo);
 
 module.exports = toDoRouter;

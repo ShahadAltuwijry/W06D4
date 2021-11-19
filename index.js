@@ -19,6 +19,6 @@ dotenv.config();
 const PORT = process.env.PORT;
 
 //at the end adding app listener
-app.listen(PORT, () => { 
+app.listen(PORT, () => {
   console.log(`the server is on and running on ${PORT}`);
 });

@@ -14,7 +14,7 @@ const getAllToDos = (req, res) => {
 const addToDo = (req, res) => {
   const { task } = req.body;
   const added = new todoModel({ task });
-
+  console.log(task);
   added
     .save()
     .then((result) => {
@@ -23,9 +23,6 @@ const addToDo = (req, res) => {
     .catch((err) => {
       res.send(err);
     });
-
-  //   todoModel.push({ name: req.body, isCompleted: false, isDeleted: false });
-  //   res.status(201).json({ name, isCompleted, isDeleted });
 };
 
 module.exports = { getAllToDos, addToDo };
